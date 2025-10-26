@@ -105,6 +105,45 @@
 					'modular_skyrat/modules/black_mesa/sound/explosions/explode6.ogg',
 					'modular_skyrat/modules/black_mesa/sound/explosions/explode7.ogg',
 				)
+			if ("burp")
+				soundin = pick(
+					'modular_gs/sound/voice/burp1.ogg',
+					'modular_gs/sound/voice/belch1.ogg',
+					'modular_gs/sound/voice/belch2.ogg',
+					'modular_gs/sound/voice/belch3.ogg',
+				)
+			if ("belch")
+				soundin = pick(
+					'modular_gs/sound/voice/belch1.ogg',
+					'modular_gs/sound/voice/belch2.ogg',
+					'modular_gs/sound/voice/belch3.ogg',
+					'modular_gs/sound/voice/belch4.ogg',
+					'modular_gs/sound/voice/belch5.ogg',
+					'modular_gs/sound/voice/belch6.ogg',
+					'modular_gs/sound/voice/belch7.ogg',
+					'modular_gs/sound/voice/belch8.ogg',
+					'modular_gs/sound/voice/belch9.ogg',
+					'modular_gs/sound/voice/belch10.ogg',
+					'modular_gs/sound/voice/belch11.ogg',
+				)
+			if ("fart")
+				soundin = pick(
+					'modular_gs/sound/voice/fart1.ogg',
+					'modular_gs/sound/voice/fart2.ogg',
+					'modular_gs/sound/voice/fart3.ogg',
+					'modular_gs/sound/voice/fart4.ogg',
+				)
+			if ("brap")
+				soundin = pick(
+					'modular_gs/sound/voice/brap1.ogg',
+					'modular_gs/sound/voice/brap2.ogg',
+					'modular_gs/sound/voice/brap3.ogg',
+					'modular_gs/sound/voice/brap4.ogg',
+					'modular_gs/sound/voice/brap5.ogg',
+					'modular_gs/sound/voice/brap6.ogg',
+					'modular_gs/sound/voice/brap7.ogg',
+					'modular_gs/sound/voice/brap8.ogg',
+				)
 	return soundin
 
 // This is an atom level variable to prevent extensive typechecking for impacts.

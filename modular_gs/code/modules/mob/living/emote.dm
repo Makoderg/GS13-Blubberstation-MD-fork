@@ -1,5 +1,5 @@
-/datum/emote/living/bellygurgle
-	key = "bellygurgle"
+/datum/emote/living/gurgle
+	key = "gurgle"
 	key_third_person = "gurgles"
 	message = "'s belly gurgles"
 	emote_type = EMOTE_AUDIBLE
