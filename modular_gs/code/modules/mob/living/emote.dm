@@ -1,5 +1,5 @@
-/datum/emote/living/gurgle
-	key = "gurgle"
+/datum/emote/living/bellygurgle
+	key = "bellygurgle"
 	key_third_person = "gurgles"
 	message = "'s belly gurgles"
 	emote_type = EMOTE_AUDIBLE
@@ -16,14 +16,14 @@
 	var/reduction_min = 4
 	var/reduction_max = 8
 	var/noise_type = "burp"
-	var/noise_pref = BURPING_NOISES
+	var/noise_pref = /datum/preference/toggle/burpsfx
 
 /datum/emote/living/burp/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return FALSE
 
-	playsound_prefed(user, noise_type, noise_pref, 100, TRUE, -4)
+	playsound_prefed(user, noise_type, noise_pref, rand(50, 100))
 
 	var/mob/living/carbon/carbon_user = user
 	carbon_user.reduce_fullness(rand(reduction_min,reduction_max))
@@ -34,26 +34,26 @@
 	message = "farts"
 	//god hates me for this -Metha
 	noise_type = "fart"
-	noise_pref = FARTING_NOISES
+	noise_pref = /datum/preference/toggle/fartsfx
 
 /datum/emote/living/burp/fart/run_emote(mob/living/user, params)
 	. = ..()
 	if(!.)
 		return FALSE
 
-	var/obj/item/storage/book/bible/b = locate(/obj/item/storage/book/bible) in get_turf(user) //Biblefart
-	if(b)//Devine Retribution
-		var/mob/living/heretic = user //Heresy.
-		heretic.visible_message(
-		"<span class='danger'>\The [heretic] farts on \the [b], causing a violent, otherworldly ripple to echo \
-		outwards before they explode in a gorey mess of divine retribution!</span>",
-		"<span class='userdanger'>You feel a deep sense of dread as you release pressure from your rear over \the [b], \
-		immediately realizing your mistake as Divine Retribution rends your form into a gorey mess.</span>")
-		heretic.emote("scream")
-		message_admins("[ADMIN_LOOKUPFLW(heretic)] farted on a bible at [ADMIN_VERBOSEJMP(heretic)] and was gibbed.")
-		log_game("[key_name(heretic)] farted on a bible at [AREACOORD(heretic)] and was gibbed")
-		heretic.gib()
-		return  //Gassy is dead
+	//var/obj/item/storage/book/bible/b = locate(/obj/item/storage/book/bible) in get_turf(user) //Biblefart
+	//if(b)//Devine Retribution
+	//	var/mob/living/heretic = user //Heresy.
+	//	heretic.visible_message(
+	//	"<span class='danger'>\The [heretic] farts on \the [b], causing a violent, otherworldly ripple to echo \
+	//	outwards before they explode in a gorey mess of divine retribution!</span>",
+	//	"<span class='userdanger'>You feel a deep sense of dread as you release pressure from your rear over \the [b], \
+	//	immediately realizing your mistake as Divine Retribution rends your form into a gorey mess.</span>")
+	//	heretic.emote("scream")
+	//	message_admins("[ADMIN_LOOKUPFLW(heretic)] farted on a bible at [ADMIN_VERBOSEJMP(heretic)] and was gibbed.")
+	//	log_game("[key_name(heretic)] farted on a bible at [AREACOORD(heretic)] and was gibbed")
+	//	heretic.gib()
+	//	return  //Gassy is dead
 
 /datum/emote/living/burp/belch
 	key = "belch"

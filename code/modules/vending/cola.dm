@@ -37,29 +37,35 @@
 	payment_department = ACCOUNT_SRV
 
 	var/static/list/spiking_booze = list(
-		// Your "common" spiking booze
-		/datum/reagent/consumable/ethanol/vodka = 5,
+		// "Common" spiking reagents, lower impact on gameplay with exception of Lipoifier which is to be replaced at this rarity with the Weak variant whenever it's finished.
+		/datum/reagent/consumable/fizulphite = 5,
+		/datum/reagent/consumable/flatulose = 5,
+		/datum/reagent/consumable/lipoifier/weak = 5,
 		/datum/reagent/consumable/ethanol/beer = 5,
-		/datum/reagent/consumable/ethanol/whiskey = 5,
-		/datum/reagent/consumable/ethanol/gin = 5,
 		/datum/reagent/consumable/ethanol/rum = 5,
-		// A bit rarer, can be dangerous if you take too much
+		/datum/reagent/consumable/ethanol/vodka = 5,
+		/datum/reagent/consumable/ethanol/whiskey = 5,
+
+		// A bit rarer and more impactful than the common reagents. Might move Cannabis to third rarity but unsure.
+		/datum/reagent/drug/cannabis = 3,
+		/datum/reagent/inverse/healing/tirimol = 3,
+		/datum/reagent/consumable/lipoifier = 3,
+		/datum/reagent/toxin/lipolicide = 3,
 		/datum/reagent/consumable/ethanol/thirteenloko = 3,
-		/datum/reagent/consumable/ethanol/absinthe = 3,
-		/datum/reagent/consumable/ethanol/hooch = 3,
 		/datum/reagent/consumable/ethanol/moonshine = 3,
-		// Gets funky here
-		/datum/reagent/consumable/ethanol/beepsky_smash = 1,
-		/datum/reagent/consumable/ethanol/gargle_blaster = 1,
-		/datum/reagent/consumable/ethanol/neurotoxin = 1,
+
+		// Rarest reagents. Used to include Beepsky Smash, Gargle Blaster and Neurotoxin but those seem a bit extreme.
+		/datum/reagent/drug/munchies = 1,
+		/datum/reagent/fermi_fat = 1,
+
 		)
 
 /obj/machinery/vending/cola/on_dispense(obj/item/vended_item, dispense_returned = FALSE)
 	// Only apply to newly dispensed items
 	if(dispense_returned)
 		return
-	// 35% chance that your drink will be safe, as safe pure acid and sugar that these drinks probably are can be
-	if(!onstation || !HAS_TRAIT(SSstation, STATION_TRAIT_SPIKED_DRINKS) || !prob(65))
+	// 75% chance that your drink will be safe, as safe pure acid and sugar that these drinks probably are can be
+	if(!onstation || !HAS_TRAIT(SSstation, STATION_TRAIT_SPIKED_DRINKS) || !prob(25))
 		return
 	// Don't fill booze with more booze
 	if (isnull(vended_item.reagents) || vended_item.reagents.has_reagent(/datum/reagent/consumable/ethanol, check_subtypes = TRUE))

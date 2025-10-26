@@ -58,3 +58,22 @@
 /datum/preference/choiced/erp_status_feed_nc/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
 	return FALSE
 
+
+/datum/preference/toggle/burpsfx
+	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
+	savefile_identifier = PREFERENCE_PLAYER
+	savefile_key = "BURPING_NOISES"
+	default_value = FALSE
+
+/datum/preference/toggle/burpsfx/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
+
+/datum/preference/toggle/fartsfx
+	category = PREFERENCE_CATEGORY_GAME_PREFERENCES
+	savefile_identifier = PREFERENCE_PLAYER
+	savefile_key = "FARTING_NOISES"
+	default_value = FALSE
+
+/datum/preference/toggle/fartsfx/apply_to_human(mob/living/carbon/human/target, value, datum/preferences/preferences)
+	return
+

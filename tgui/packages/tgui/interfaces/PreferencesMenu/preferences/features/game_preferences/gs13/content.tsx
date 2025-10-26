@@ -65,3 +65,17 @@ export const size_xwg: FeatureToggle = {
   category: 'Size',
   component: CheckboxInput,
 };
+export const BURPING_NOISES: FeatureToggle = {
+  name: 'Burp Sounds',
+  category: 'SOUND',
+  description: 'Enables/disables burping and belching sounds.',
+  component: CheckboxInput,
+};
+
+export const FARTING_NOISES: FeatureToggle = {
+  name: 'Fart Sounds',
+  category: 'SOUND',
+  description:
+    'Enables/disables sounds from the fart and brap emotes, and by extension the sound effects of Flatulose.',
+  component: CheckboxInput,
+};

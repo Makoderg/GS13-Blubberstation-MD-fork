@@ -748,7 +748,7 @@
 /datum/station_trait/spiked_drinks
 	name = "Spiked Drinks"
 	trait_type = STATION_TRAIT_NEGATIVE
-	weight = 3
+	weight = 5
 	cost = STATION_TRAIT_COST_LOW
 	show_in_report = TRUE
 	report_message = "Due to a mishap at the Robust Softdrinks Megafactory, some drinks may contain traces of ethanol or psychoactive chemicals."
